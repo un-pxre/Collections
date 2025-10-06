@@ -1,14 +1,5 @@
 package ed.collections;
 
-/*
-Tive que retirar porque senão o node ia ficar vazio para sempre sem setElement e fiz T element ser final portanto, está correto sim?
-Mas fará sentido né para os sentinelas etc?
-// Creates an empty node.
-public LinearNode() {
-    this(null);
-}
-*/
-
 /**
  * {@code LinearNode} represents a single node in a linked structure.
  * Each node stores an element and a reference to the next node in the list.
