@@ -31,7 +31,9 @@ public class ArrayStack<T> implements StackADT<T> {
 
     /**
      * Creates an empty stack using the specified capacity.
-     * @param initialCapacity represents the specified capacity */
+     *
+     * @param initialCapacity represents the specified capacity 
+     * @throws IllegalArgumentException if {@code initialCapacity} is less than or equal to zero */
     @SuppressWarnings("unchecked")
     public ArrayStack(int initialCapacity) {
         if (initialCapacity <= 0) {
@@ -44,9 +46,7 @@ public class ArrayStack<T> implements StackADT<T> {
 
     /**
      * Expands the capacity of this stack's underlying array when it becomes full.
-     * If the current capacity is zero (e.g. created with {@code new ArrayStack(0)}),
-     * the array is expanded to the default capacity. Otherwise, the capacity
-     * is multiplied by the expansion factor. */
+     * The capacity is multiplied by the expansion factor. */
     private void expandCapacity() {
         stack = Arrays.copyOf(stack, stack.length * EXPAND_FACTOR);
     }
@@ -54,6 +54,7 @@ public class ArrayStack<T> implements StackADT<T> {
     /**
      * Adds the specified element to the top of this stack,
      * expanding the capacity of the stack array if necessary.
+     *
      * @param element generic element to be pushed onto stack */
     @Override
     public void push(T element) {
@@ -68,6 +69,7 @@ public class ArrayStack<T> implements StackADT<T> {
      * Removes the element at the top of this stack and
      * returns a reference to it.
      * Throws an EmptyCollectionException if the stack is empty.
+     *
      * @return T element removed from top of stack
      * @throws EmptyCollectionException if a pop is attempted
      * on empty stack */
@@ -88,6 +90,7 @@ public class ArrayStack<T> implements StackADT<T> {
      * Returns a reference to the element at the top of this stack.
      * The element is not removed from the stack.
      * Throws an EmptyCollectionException if the stack is empty.
+     *
      * @return T element on top of stack
      * @throws EmptyCollectionException if a peek is attempted
      * on empty stack */
@@ -102,7 +105,8 @@ public class ArrayStack<T> implements StackADT<T> {
 
     /**
      * Returns true if this stack contains no elements.
-     * @return boolean true if this stack is empty, false otherwise. */
+     *
+     * @return {@code true} if this stack is empty, {@code false} otherwise */
     @Override
     public boolean isEmpty() {
         return top == 0;
@@ -110,7 +114,8 @@ public class ArrayStack<T> implements StackADT<T> {
 
     /**
      * Returns the number of elements in this stack.
-     * @return int number of elements in this stack */
+     *
+     * @return number of elements in this stack */
     @Override
     public int size() {
         return top;
@@ -118,6 +123,7 @@ public class ArrayStack<T> implements StackADT<T> {
 
     /**
      * Returns a string representation of this stack.
+     *
      * @return String representation of this stack */
     @Override
     public String toString() {
@@ -127,9 +133,7 @@ public class ArrayStack<T> implements StackADT<T> {
             stringBuilder.append("\t" + (i + 1) + " -> " + stack[i] + "\n");
         }
 
-        stringBuilder.append("}\n");
-
-        return stringBuilder.toString();
+        return stringBuilder.append("}").toString();
     }
 
 }
