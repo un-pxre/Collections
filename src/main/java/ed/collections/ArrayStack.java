@@ -32,7 +32,7 @@ public class ArrayStack<T> implements StackADT<T> {
     /**
      * Creates an empty stack using the specified capacity.
      *
-     * @param initialCapacity represents the specified capacity 
+     * @param initialCapacity represents the specified capacity
      * @throws IllegalArgumentException if {@code initialCapacity} is less than or equal to zero */
     @SuppressWarnings("unchecked")
     public ArrayStack(int initialCapacity) {
@@ -106,7 +106,7 @@ public class ArrayStack<T> implements StackADT<T> {
     /**
      * Returns true if this stack contains no elements.
      *
-     * @return {@code true} if this stack is empty, {@code false} otherwise */
+     * @return boolean true if this stack is empty, false otherwise. */
     @Override
     public boolean isEmpty() {
         return top == 0;
@@ -115,7 +115,7 @@ public class ArrayStack<T> implements StackADT<T> {
     /**
      * Returns the number of elements in this stack.
      *
-     * @return number of elements in this stack */
+     * @return int number of elements in this stack */
     @Override
     public int size() {
         return top;
@@ -127,10 +127,10 @@ public class ArrayStack<T> implements StackADT<T> {
      * @return String representation of this stack */
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder("ArrayStack{ size = " + size() + ", arrayStack.length = " + stack.length + "\n");
+        StringBuilder stringBuilder = new StringBuilder("ArrayStack { size = " + size() + ", arrayStack.length = " + stack.length + "\n");
 
         for (int i = top - 1 ; i >= 0; i--) {
-            stringBuilder.append("\t" + (i + 1) + " -> " + stack[i] + "\n");
+            stringBuilder.append(String.format("\t%d -> %s\n", i + 1, stack[i]));
         }
 
         return stringBuilder.append("}").toString();

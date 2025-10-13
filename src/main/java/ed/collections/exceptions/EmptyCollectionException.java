@@ -3,8 +3,8 @@ package ed.collections.exceptions;
 /**
  * {@code EmptyCollectionException} is thrown to indicate that an operation
  * requiring elements in a collection was attempted on an empty collection.
- * This exception is typically used by data structures to signal invalid
- * operations due to emptiness.
+ * This exception is used by data structures to signal invalid operations
+ * due to emptiness.
  *
  * @author José Azevedo (8240127@estg.ipp.pt) */
 public class EmptyCollectionException extends Exception {
